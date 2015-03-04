@@ -12,8 +12,8 @@ task :setup_key_map do
   else
     `which sudo`.chomp
   end
-  puts `#{sudo_cmd} ruby ./rake_helper.rb`
-  FileUtils.chown (user = `whoami`.chomp), user, File.join(root, 'data')
+  user = `whoami`
+  puts `#{sudo_cmd} ruby ./rake_helper.rb #{user}`
 end
 
 task default: :setup_key_map
