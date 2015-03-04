@@ -1,0 +1,4 @@
+syntax: glob
+Gemfile.lock
+data/key_map_cache
+pkg/vigilem-evdev-*.gem

@@ -1,0 +1,17 @@
+root = File.expand_path('../', __FILE__)
+lib = File.join(root, 'lib')
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'vigilem/evdev/system/keymap_loaders'
+
+task :setup_key_map do
+  sudo_cmd = if not `which rvmsudo`.empty?
+    'rvmsudo' 
+  else
+    `which sudo`
+  end
+  puts `#{sudo_cmd} ruby ./rake_helper.rb`
+  FileUtils.chown (user = `whoami`), user, File.join(root, 'data')
+end
+
+task default: :setup_key_map
