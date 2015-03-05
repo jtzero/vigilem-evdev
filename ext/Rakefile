@@ -2,11 +2,10 @@ root = File.expand_path('../../', __FILE__)
 lib = File.join(root, 'lib')
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'fileutils'
-
-require 'vigilem/evdev/system/keymap_loaders'
-
 task :setup_key_map do
+  require 'vigilem/evdev/system/keymap_loaders'
+  require 'fileutils'
+  
   sudo_cmd = if not `which rvmsudo`.empty?
     'rvmsudo' 
   else
@@ -16,4 +15,17 @@ task :setup_key_map do
   puts `#{sudo_cmd} ruby ./rake_helper.rb #{user}`
 end
 
-task default: :setup_key_map
+task :x11_context_filter do
+  require 'vigilem/x11/stat'
+  vxd = Vigilem::X11::Stat.default
+  if vxd.available?
+    vxd.install
+  end
+end
+
+task :init_steps do
+  Rake::Task["setup_key_map"].invoke
+  Rake::Task["x11_context_filter"].invoke
+end
+
+task default: :init_steps
