@@ -2,7 +2,7 @@
   Provides DOM conversion and ruby binding for evdev
   
 ## Installation
-  $ gem install vigilem-evdev
+  $ gem install vigilem-evdev  
   (for Bundler see known issues)
   
 ## Usage
