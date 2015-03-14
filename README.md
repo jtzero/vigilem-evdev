@@ -50,6 +50,6 @@
    - Mac/Bsd
    - mouse
    - jettison 'linux-system' items into own gem
-   - less brittel tests
+   - less brittle tests
  + next
    - complete ffi items
