@@ -28,7 +28,7 @@
   which has a great explanation
 
 ### bundler/gem install fail
-  adding just ```gem 'vigilem-evdev'``` is different than ```gem install vigilem-evdev```
+  Adding just ```gem 'vigilem-evdev'``` is different than ```gem install vigilem-evdev```
   In both cases the vigilem-evdev gem installs it's input_system dependencies on install, however since 
   bundler tracks it's installed gems the dynamically installed gems get added to the $GEM_HOME still, 
   but not added to Gemfile.lock. So in order exactly model production the 'vigilem-x11' needs to be added 
