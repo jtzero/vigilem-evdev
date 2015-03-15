@@ -30,8 +30,8 @@
 ### bundler/gem install fail
   adding just ```gem 'vigilem-evdev'``` is different than ```gem install vigilem-evdev```
   In both cases the vigilem-evdev gem installs it's input_system dependencies on install, however since 
-  bundler isolates it's installed gems the dynamically installed gems get added to the $GEM_HOME and not
-  the bundler cache. So in order exactly model production the 'vigilem-x11' needs to be added 
+  bundler tracks it's installed gems the dynamically installed gems get added to the $GEM_HOME still, 
+  but not added to Gemfile.lock. So in order exactly model production the 'vigilem-x11' needs to be added 
   ```
   gem 'vigilem-evdev'
   gem 'vigilem-x11'
@@ -39,8 +39,8 @@
   @see focus_context_filter.rb and input_system_handler.rb
 
 ## FAQ
-  - why does vigilem-evdev require vigilem-x11-stat?: 
-      This is convenience for gnome-terminal so that it:
+  + why does vigilem-evdev require vigilem-x11-stat?:  
+      + This is convenience for gnome-terminal so that it:  
         - doesn't read the keyboard when the window doesn't have focus
         - this matches how win32 does things and makes it more cross platform
 
