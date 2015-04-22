@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.extensions    = ['ext/Rakefile']
   
   s.add_dependency 'vigilem-core'
-  s.add_dependency 'vigilem-dom'
+  s.add_dependency 'vigilem-dom', '~> 0.1.1'
   
   s.add_dependency 'vigilem-x11-stat'
   

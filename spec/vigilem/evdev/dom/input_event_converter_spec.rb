@@ -160,7 +160,7 @@ describe Vigilem::Evdev::DOM::InputEventConverter, :clean_up_test_cache do
   let(:key_hash) do
     {
       bubbles: false, cancelable: false,
-      code: 'KeyA', detail: 0, isTrusted: true, isComposing: false, 
+      code: 'KeyA', detail: 0, isComposing: false, isTrusted: true,
       key: 'a', location: 0, 
       modifier_state: {"Accel"=>false, "Alt"=>false, "AltGraph"=>false,
          "CapsLock"=>false, "Control"=>false, "Fn"=>false,
@@ -229,7 +229,8 @@ describe Vigilem::Evdev::DOM::InputEventConverter, :clean_up_test_cache do
       let(:key_hash_functional) do 
         key_hash[:key] = 'Control'
         key_hash[:code] = 'ControlLeft'
-        key_hash[:modifier_state]['Control'] = true
+        key_hash[:modifier_state]["Control"] = true
+        key_hash[:modifier_state]["Accel"] = true
         key_hash[:location] = 1
         key_hash[:os_specific][:code] = Input::KEY_LEFTCTRL
         key_hash
