@@ -15,9 +15,9 @@
 ```
 
 ## tested on
-  Linux kernels 3.15, 3.2.0
-  ruby 2.0.0 x64 Linux mri
-  ruby 2.0.0 x32 Linux mri
+  - Linux kernels 3.15, 3.2.0
+  - ruby 2.0.0 x64 Linux mri
+  - ruby 2.0.0 x32 Linux mri
 
 ### Known issues
 
