@@ -14,11 +14,6 @@
   puts adapter.read_one.inspect
 ```
 
-## rbenv, rvm
-  - due to the nature of evdev, sudo is required
-  - rvm: comes with sudo
-  - rbenv: install https://github.com/dcarley/rbenv-sudo
-
 ## tested on
   Linux kernels 3.15, 3.2.0
   ruby 2.0.0 x64 Linux mri
@@ -31,6 +26,11 @@
   Rather than rewrite the wheel, please see 
   https://github.com/jteeuwen/evdev/blob/master/README.md#permissions
   which has a great explanation
+
+### rbenv, rvm
+  - due to the above:
+    - rvm: comes with sudo
+    - rbenv: install https://github.com/dcarley/rbenv-sudo
 
 ### bundler/gem install fail
   Adding just ```gem 'vigilem-evdev'``` is different than ```gem install vigilem-evdev```
