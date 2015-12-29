@@ -14,6 +14,11 @@
   puts adapter.read_one.inspect
 ```
 
+## rbenv, rvm
+  - due to the nature of evdev, sudo is required
+  - rvm: comes with sudo
+  - rbenv: install https://github.com/dcarley/rbenv-sudo
+
 ## tested on
   Linux kernels 3.15, 3.2.0
   ruby 2.0.0 x64 Linux mri
